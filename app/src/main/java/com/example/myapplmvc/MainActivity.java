@@ -24,6 +24,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
     FloatingActionButton fab;
+    Button listar, nueva;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,17 +51,30 @@ public class MainActivity extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         fab=findViewById(R.id.fab);
+        listar=findViewById(R.id.listar_id);
+        nueva=findViewById(R.id.nueva_id);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_FirstFragment_to_treeFragment);
+                navController.navigate(R.id.treeFragment);
 
 
                 Toast.makeText(MainActivity.this, "HOLA MUNDO", Toast.LENGTH_SHORT).show();
             }
         });
-
+        listar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.FirstFragment);
+            }
+        });
+        nueva.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.treeFragment);
+            }
+        });
 
     }
 

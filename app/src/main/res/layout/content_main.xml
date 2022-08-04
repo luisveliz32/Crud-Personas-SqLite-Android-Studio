@@ -7,18 +7,50 @@
     android:backgroundTint="@color/white"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="419dp"
+        android:layout_height="49dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="91dp">
+
+        <Button
+            android:id="@+id/listar_id"
+            android:layout_width="98dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Listar Personas"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/nueva_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nueva Persona"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
     <fragment
         android:id="@+id/nav_host_fragment_content_main"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="417dp"
+        android:layout_height="658dp"
+        android:background="@color/white"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.34"
         app:navGraph="@navigation/nav_graph" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -27,22 +59,19 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
-        android:layout_marginStart="339dp"
-        android:layout_marginTop="592dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="659dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
         android:contentDescription="float"
         android:src="@android:drawable/ic_menu_add"
         app:backgroundTint="@color/purple_700"
         app:borderWidth="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/nav_host_fragment_content_main"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment_content_main"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment_content_main"
-        app:layout_constraintTop_toTopOf="@+id/nav_host_fragment_content_main"
-        app:layout_constraintVertical_bias="0.932"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.916"
         app:rippleColor="@color/white" />
 
 
