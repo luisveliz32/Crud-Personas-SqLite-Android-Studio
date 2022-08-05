@@ -68,12 +68,12 @@ public class treeFragment extends Fragment {
         imagen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Intent intent = CropImage.activity()
+                Intent intent = CropImage.activity()
                         .setGuidelines(CropImageView.Guidelines.ON)
                         .setAspectRatio(35,50)
                         .getIntent(getContext());
-                startActivityForResult(intent, CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE);*/
-                PickFromCamera();
+                startActivityForResult(intent, CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE);
+                //PickFromCamera(); usar para la camara nada mas
             }
         });
 
@@ -94,8 +94,9 @@ public class treeFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-            CropImage.activity(imageuri)
-                    .start(getActivity());
+            //usar para la camara nomas todavia no esta definido
+            /*CropImage.activity(imageuri)
+                    .start(getActivity());*/
                 CropImage.ActivityResult result = CropImage.getActivityResult(data);
                 if (resultCode == Activity.RESULT_OK) {
                     //imageuri=result.getUri();
